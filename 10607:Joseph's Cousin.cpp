@@ -3,7 +3,7 @@
 using namespace std;
 
 #define sizep 33000
-//Thanks to Ming - Wei Niu
+
 bool prime[sizep];
 vector<int> getprime() {
 	vector<int> P;
