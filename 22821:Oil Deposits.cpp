@@ -3,39 +3,16 @@
 using namespace std;
 
 void dfs(bool oil[101][101],int indexi,int indexj) {
-	if (indexi > 0) {
-		if (oil[indexi - 1][indexj - 1]) {
-			oil[indexi - 1][indexj - 1] = false;
-			dfs(oil, indexi - 1, indexj - 1);
+	for (int i = -1; i <=1; i++) {
+		for (int j = -1; j <= 1; j++) {
+			if (indexi + i < 0 || indexj + j < 0) {
+				continue;
+			}
+			if (oil[indexi +i][indexj +j]) {
+				oil[indexi + i][indexj + j] = false;
+				dfs(oil, indexi + i, indexj + j);
+			}
 		}
-		if (oil[indexi - 1][indexj]) {
-			oil[indexi - 1][indexj] = false;
-			dfs(oil, indexi - 1, indexj);
-		}
-		if (oil[indexi - 1][indexj + 1]) {
-			oil[indexi - 1][indexj + 1] = false;
-			dfs(oil, indexi - 1, indexj + 1);
-		}
-	}
-	if (oil[indexi][indexj - 1]) {
-		oil[indexi][indexj - 1] = false;
-		dfs(oil, indexi, indexj-1);
-	}
-	if (oil[indexi][indexj + 1]) {
-		oil[indexi][indexj + 1] = false;
-		dfs(oil, indexi, indexj + 1);
-	}
-	if (oil[indexi + 1][indexj - 1]) {
-		oil[indexi + 1][indexj - 1] = false;
-		dfs(oil, indexi + 1, indexj - 1);
-	}
-	if (oil[indexi + 1][indexj]) {
-		oil[indexi + 1][indexj] = false;
-		dfs(oil, indexi + 1, indexj);
-	}
-	if (oil[indexi + 1][indexj+1]) {
-		oil[indexi + 1][indexj + 1] = false;
-		dfs(oil, indexi + 1, indexj + 1);
 	}
 }
 
