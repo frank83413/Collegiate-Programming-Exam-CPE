@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-void dfs(bool oil[100][100],int indexi,int indexj) {
+void dfs(bool oil[101][101],int indexi,int indexj) {
 	if (indexi > 0) {
 		if (oil[indexi - 1][indexj - 1]) {
 			oil[indexi - 1][indexj - 1] = false;
@@ -43,14 +43,14 @@ int main()
 {
 	int r, c;
 	char in;
-	bool oil[100][100];
+	bool oil[101][101];
 	int count;
 	while (true) {
 		cin >> r >> c;
 		if (r == 0 || c == 0)break;
 		count = 0;
-		for (int i = 0; i < 100; i++) {
-			for (int j = 0; j < 100; j++) {
+		for (int i = 0; i < 101; i++) {
+			for (int j = 0; j < 101; j++) {
 				oil[i][j] = false;
 			}
 		}
